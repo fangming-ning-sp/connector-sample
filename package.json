@@ -1,0 +1,25 @@
+{
+  "name": "simple-connector",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Mock connector for integration testing",
+  "author": "SailPoint Technologies, Inc.",
+  "license": "Copyright (c) 2021. SailPoint Technologies, Inc. All rights reserved.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "clean": "shx rm -rf ./dist",
+    "prebuild": "npm run clean",
+    "build": "npx ncc build ./index.ts -o ./dist -m -C",
+    "prepare": "npm run build",
+    "test": "echo \"Warn: no test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@sailpoint/connector-sdk": "github:sailpoint/saas-connector-sdk-js#main"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.4",
+    "@vercel/ncc": "^0.28.6",
+    "shx": "^0.3.3",
+    "typescript": "^4.3.4"
+  }
+}
